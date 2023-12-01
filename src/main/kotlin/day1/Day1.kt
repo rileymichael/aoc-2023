@@ -12,16 +12,15 @@ object Day1 : Puzzle<Sequence<String>>(1) {
     }
 
     override fun part2(input: Sequence<String>) = input.sumOf { line ->
-        var newLine = line
-        replacements.forEach { (match, replacement) ->
-            newLine = newLine.replace(match, replacement)
+        val l = replacements.fold(line) { acc, (match, replacement) ->
+            acc.replace(match, replacement)
         }
-        val ints = newLine.filter { char -> char.isDigit() }
+        val ints = l.filter { char -> char.isDigit() }
         "${ints.first()}${ints.last()}".toInt()
     }
 }
 
-private val replacements = mapOf(
+private val replacements = listOf(
     "one" to "o1e",
     "two" to "t2o",
     "three" to "t3e",
