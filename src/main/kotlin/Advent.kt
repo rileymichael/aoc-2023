@@ -1,11 +1,13 @@
 package com.github.rileymichael
 
 import com.github.rileymichael.day1.Day1
+import com.github.rileymichael.day2.Day2
 
 fun main() {
     // todo: reflection to get rid of this.. arg to run spcific day..
     val days = listOf(
         Day1,
+        Day2,
     )
     days.lastOrNull()?.run { solve() }
 }
