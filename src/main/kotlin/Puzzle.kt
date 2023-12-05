@@ -1,4 +1,4 @@
-package com.github.rileymichael
+package com.github.rileymichael.aoc2023
 
 import kotlin.time.TimedValue
 import kotlin.time.measureTimedValue

@@ -1,7 +1,6 @@
-package com.github.rileymichael.day1
+package com.github.rileymichael.aoc2023.day1
 
-import com.github.rileymichael.Puzzle
-
+import com.github.rileymichael.aoc2023.Puzzle
 
 object Day1 : Puzzle<Sequence<String>>(1) {
     override fun parse(input: Sequence<String>): Sequence<String> = input

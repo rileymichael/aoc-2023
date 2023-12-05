@@ -1,4 +1,4 @@
-package com.github.rileymichael.day2
+package com.github.rileymichael.aoc2023.day2
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe

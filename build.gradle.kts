@@ -3,7 +3,7 @@ plugins {
     application
 }
 
-group = "com.github.rileymichael"
+group = "com.github.rileymichael.aoc2023"
 
 application {
     mainClass.set("${group}.AdventKt")

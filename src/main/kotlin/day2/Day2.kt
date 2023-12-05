@@ -1,6 +1,6 @@
-package com.github.rileymichael.day2
+package com.github.rileymichael.aoc2023.day2
 
-import com.github.rileymichael.Puzzle
+import com.github.rileymichael.aoc2023.Puzzle
 
 object Day2 : Puzzle<Sequence<Game>>(2) {
     override fun parse(input: Sequence<String>): Sequence<Game> = input.mapIndexed { index, line ->

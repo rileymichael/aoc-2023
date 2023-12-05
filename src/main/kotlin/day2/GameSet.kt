@@ -1,4 +1,4 @@
-package com.github.rileymichael.day2
+package com.github.rileymichael.aoc2023.day2
 
 data class GameSet(
     val red: Int,
