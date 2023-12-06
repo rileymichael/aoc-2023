@@ -20,4 +20,12 @@ class Day4Test : StringSpec({
     "part 1 solution" {
         Day4.solve(Day4::part1) shouldBe 23235
     }
+
+    "part 2 example" {
+        Day4.solve(Day4::part2, input) shouldBe 30
+    }
+
+    "part 2 solution" {
+        Day4.solve(Day4::part2) shouldBe 5920640
+    }
 })

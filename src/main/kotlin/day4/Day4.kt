@@ -7,5 +7,14 @@ object Day4: Puzzle<Sequence<Scratchcard>>(4) {
 
     override fun part1(input: Sequence<Scratchcard>) = input.sumOf(Scratchcard::points)
 
-    override fun part2(input: Sequence<Scratchcard>) = TODO()
+    override fun part2(input: Sequence<Scratchcard>): Any {
+        val cards = input.toList()
+        val counts = IntArray(cards.size) { 1 }
+        cards.forEach { card ->
+            repeat(card.matches.size) { i ->
+                counts[card.number + i] += counts[card.number - 1]
+            }
+        }
+        return counts.sum()
+    }
 }
