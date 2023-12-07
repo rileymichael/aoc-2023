@@ -7,6 +7,9 @@ data class Almanac(
     val seeds: List<Long>,
     val maps: List<AlmanacMap>,
 ) {
+
+    fun reverse() = maps.map(AlmanacMap::reverse).reversed()
+
     companion object {
         fun parse(value: Sequence<String>): Almanac {
             val chunked = value.chunkedBy(String::isBlank).toList()

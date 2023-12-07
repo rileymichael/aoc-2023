@@ -14,6 +14,15 @@ object Day5: Puzzle<Almanac>(5) {
     }
 
     override fun part2(input: Almanac): Any {
-        TODO("Not yet implemented")
+        val seedRanges = input.seeds.chunked(2).map { (start, length) ->
+            start until start + length
+        }
+        val reversed = input.reverse()
+        return generateSequence(0L, Long::inc).first { loc ->
+            val seed = reversed.fold(loc) { acc, map ->
+                map.get(acc)
+            }
+            seedRanges.any { seed in it }
+        }
     }
 }

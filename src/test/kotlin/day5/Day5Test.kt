@@ -47,4 +47,12 @@ humidity-to-location map:
     "part 1 solution" {
         Day5.solve(Day5::part1) shouldBe 424490994
     }
+
+    "part 2 example" {
+        Day5.solve(Day5::part2, input) shouldBe 46
+    }
+
+    "part 2 solution" {
+        Day5.solve(Day5::part2) shouldBe 15290096
+    }
 })

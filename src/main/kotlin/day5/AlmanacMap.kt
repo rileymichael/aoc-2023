@@ -5,7 +5,9 @@ import com.github.rileymichael.aoc2023.shared.longs
 data class AlmanacRangePair(
     val src: LongRange,
     val dst: LongRange,
-)
+) {
+    fun reverse() = AlmanacRangePair(dst, src)
+}
 
 data class AlmanacMap(
     val src: String,
@@ -17,6 +19,10 @@ data class AlmanacMap(
         it.dst.first + offset
     } ?: source
 
+    fun reverse() = AlmanacMap(
+        dst, src, ranges.map(AlmanacRangePair::reverse).reversed()
+    )
+
     companion object {
         fun parse(value: List<String>): AlmanacMap {
             val (mapping, _) = value.first().split(" ")
@@ -24,8 +30,8 @@ data class AlmanacMap(
             val pairs = value.drop(1).map { entry ->
                 val (dstStart, srcStart, length) = entry.longs().toList()
                 AlmanacRangePair(
-                    srcStart..srcStart + length,
-                    dstStart..dstStart + length,
+                    srcStart until  srcStart + length,
+                    dstStart until dstStart + length,
                 )
             }
             return AlmanacMap(src, dst, pairs)
