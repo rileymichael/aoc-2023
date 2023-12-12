@@ -16,4 +16,12 @@ Distance:  9  40  200
     "part 1 solution" {
         Day6.solve(Day6::part1) shouldBe 114400
     }
+
+    "part 2 example" {
+        Day6.solve(Day6::part2, input) shouldBe 71503
+    }
+
+    "part 2 solution" {
+        Day6.solve(Day6::part2) shouldBe 21039729
+    }
 })
